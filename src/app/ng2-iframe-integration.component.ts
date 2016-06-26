@@ -8,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class Ng2IframeIntegrationAppComponent {
   title = 'ng2-iframe-integration works!';
+
+  callParentFunction() {
+    // solution 1 - sans typage
+    window.parent['fireFromInside']('hello from angular app');
+
+    // solution 2 - avec typage
+    window.parent.fireFromInside('hello from angular typed');
+  }
 }
